@@ -15,12 +15,13 @@ class CreateTimetablesTable extends Migration
     {
         Schema::create('timetables', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id')->nullable();
             $table->dateTime('start_time');
-            $table->dateTime('end_time');
-            $table->dateTime('start_break');
-            $table->dateTime('end_break');
-            $table->bigInteger('duration_break');
-            $table->string('notes');
+            $table->dateTime('stop_time')->nullable();
+            $table->dateTime('start_pause')->nullable();
+            $table->dateTime('stop_pause')->nullable();
+            $table->bigInteger('duration_pause')->nullable();
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
     }
