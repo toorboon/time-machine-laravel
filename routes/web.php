@@ -13,22 +13,24 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/createUser', 'PagesController@createUser');
+Route::get('/export', 'PagesController@export')->name('pages.export');
 
-Route::get('/export', 'PagesController@export');
+Route::get('/grocery', 'PagesController@grocery')->name('pages.grocery');
 
-Route::get('/grocery', 'PagesController@grocery');
+Route::get('/overview', 'PagesController@overview')->name('pages.overview');
 
-Route::get('/overview', 'PagesController@overview');
+Route::get('/timeMachine', 'PagesController@timeMachine')->name('pages.timeMachine');
 
-Route::get('/timeMachine', 'PagesController@timeMachine');
+Route::post('/timeMachine/ajaxStart', 'TimetableController@setStartDate')->name('start.session');
 
-Route::post('/timeMachine/ajaxStart', 'TimetableController@setStartDate');
+Route::post('/timeMachine/ajaxStop', 'TimetableController@setStopDate')->name('stop.session');
 
-Route::post('/timeMachine/ajaxStop', 'TimetableController@setStopDate');
+Route::post('/timeMachine/ajaxPause', 'TimetableController@setPauseDate')->name('pause.session');
 
-Route::post('/timeMachine/ajaxPause', 'TimetableController@setPauseDate');
+Route::post('/timeMachine/ajaxSessionCheck', 'TimetableController@checkSession')->name('check.session');
 
-Route::post('/timeMachine/ajaxSessionCheck', 'TimetableController@checkSession');
+Route::resource('sessions', 'TimetableController');
 
+Auth::routes();
 
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

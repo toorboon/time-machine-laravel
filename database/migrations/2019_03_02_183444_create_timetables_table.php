@@ -15,7 +15,7 @@ class CreateTimetablesTable extends Migration
     {
         Schema::create('timetables', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->nullable();
+            $table->integer('user_id');
             $table->dateTime('start_time');
             $table->dateTime('stop_time')->nullable();
             $table->dateTime('start_pause')->nullable();

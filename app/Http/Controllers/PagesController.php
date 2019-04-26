@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -27,7 +28,9 @@ class PagesController extends Controller
     }
 
     public function timeMachine(){
-
-    	return view('pages.timeMachine');
+        $userId = auth()->id();
+        $user = User::find($userId);
+// dd($user);
+    	return view('pages.timeMachine')->with('user', $user);
     }
 }

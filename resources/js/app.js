@@ -6,8 +6,27 @@
  */
 
 require('./bootstrap');
+require('./main');
+
 
 window.Vue = require('vue');
+
+// Denk darüber nach, ob du dieses Skript nicht lieber in den ressources/js als datepicker.js haben möchtest
+// dies wäre auch zentral verfügbar und würde die app.js aber nicht verschmutzen!
+const flatpickr = require("flatpickr");
+
+$(document).ready(function() {
+    new flatpickr(document.querySelectorAll('.js-datepicker'), {
+        enableTime: true,
+        minTime: "06:00",
+        maxTime: "22:00",
+        time_24hr: true,
+        altInput: true,
+        altFormat: "d.m.Y H:i",
+        dateFormat: "Y-m-d H:i",
+        disableMobile: true
+    });
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -31,3 +50,4 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
