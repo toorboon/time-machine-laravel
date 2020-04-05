@@ -7,6 +7,16 @@ use App\User;
 
 class PagesController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
     	return view('pages.index');
     }
@@ -17,6 +27,13 @@ class PagesController extends Controller
 
     public function export(){
     	return view('pages.export');
+    }
+
+    public function tictactoe(){
+        $userId = auth()->id();
+        $user = User::find($userId);
+
+        return view('pages.tictactoe')->with('user', $user);
     }
 
     public function overview(){

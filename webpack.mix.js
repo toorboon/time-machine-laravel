@@ -15,5 +15,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
 mix.js('resources/js/timeMachine.js', 'public/js')
+mix.js('resources/js/tictactoe.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
+   .sass('resources/sass/tictactoe.sass', 'public/css')  
    .stylus('node_modules/flatpickr/src/style/themes/airbnb.styl', 'public/css');

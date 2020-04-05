@@ -27,18 +27,18 @@ class DashboardController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
-        
+
 
         $sessions = DB::table('timetables')
             ->where('user_id', $user_id)
             ->orderBy('start_time', 'desc')
             // ->get()
-            ->paginate(5);
+            ->paginate(10);
             // return $sessions;
         return view('dashboard')->with('sessions',$sessions);
     }
 
-    
 
-    
+
+
 }

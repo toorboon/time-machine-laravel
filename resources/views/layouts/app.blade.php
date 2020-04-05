@@ -12,6 +12,7 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/airbnb.css')}}">
+    @yield('tictactoeCSS')
 
     {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}"> --}}
 
@@ -23,6 +24,7 @@
     <script async src="{{ asset('js/app.js') }}"></script>
     {{-- <script defer src="{{asset('js/main.js')}}" type="text/javascript" charset="utf-8"></script> --}}
     @yield('pagespecificscripts')
+    @yield('tictactoeJS')
     
         
     <!-- Fonts -->
@@ -49,7 +51,7 @@
         @yield('content')
       </div>
         
-      <div id="picturebox" class="h-100">picture
+      <div id="picturebox" class="h-100">
       </div>
     </div>
   </div>

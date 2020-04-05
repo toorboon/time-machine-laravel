@@ -51713,15 +51713,27 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/sass/tictactoe.sass":
+/*!***************************************!*\
+  !*** ./resources/sass/tictactoe.sass ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*******************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./node_modules/flatpickr/src/style/themes/airbnb.styl ***!
-  \*******************************************************************************************************************/
+/*!***************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/tictactoe.sass ./node_modules/flatpickr/src/style/themes/airbnb.styl ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /var/www/html/time-machine-new/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /var/www/html/time-machine-new/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/time-machine-new/resources/sass/tictactoe.sass */"./resources/sass/tictactoe.sass");
 module.exports = __webpack_require__(/*! /var/www/html/time-machine-new/node_modules/flatpickr/src/style/themes/airbnb.styl */"./node_modules/flatpickr/src/style/themes/airbnb.styl");
 
 

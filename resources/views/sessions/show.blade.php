@@ -10,7 +10,7 @@
                 </div>
 {{-- {{ dd($session) }} --}}
 
-                <div class="card-body">	
+                <div class="card-body">
 					<table class="table table-hover">
 						<thead>
 							<tr>
@@ -19,7 +19,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							
+
 							<tr>
 								<td>Start Time</td>
 								<td>{{ \Carbon\Carbon::parse($session->start_time)->format('d.m.y H:i')}}</td>
@@ -50,9 +50,9 @@
 					<small>Inserted on {{$session->created_at}}</small>
 					<hr>
 					<div class="d-flex justify-content-between">
-						<a href="/dashboard" class="btn btn-sm btn-secondary">Go Back</a>
+						<a href="{{route('dashboard')}}" class="btn btn-sm btn-secondary">Go Back</a>
 						<div class="btn-group">
-							<a href='/sessions/{{$session->id}}/edit' class="btn btn-sm btn-success">Edit</a>
+							<a href='{{route('sessions.edit',$session->id)}}' class="btn btn-sm btn-success">Edit</a>
 							<form action="{{ action('TimetableController@destroy', $session->id) }}" method="POST">
 	                            @csrf
 	                            @method('DELETE')
@@ -65,5 +65,5 @@
 		</div>
 	</div>
 </div>
-		
+
 @endsection

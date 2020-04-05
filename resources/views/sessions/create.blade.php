@@ -38,7 +38,7 @@
 						  	<input type="text" class="form-control" name="notes" placeholder="Put some notes here!">
 						  </div>
 						</div>
-						  <a href="/dashboard" class="btn btn-sm btn-danger">Back</a>
+						  <a href="{{route('dashboard')}}" class="btn btn-sm btn-danger">Back</a>
 						  <input class="btn btn-sm btn-primary" type="submit" value="Submit">
 					</form>
 				</div>

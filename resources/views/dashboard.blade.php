@@ -15,9 +15,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
                     <a href="sessions/create" class="btn btn-info mb-3">Create New</a>
-                    
+
                     @if($sessions)
                     <table class="table table-hover">
                         <tr>
@@ -26,14 +26,14 @@
                             <th></th>
                         </tr>
                         @foreach($sessions as $session)
-                            
-                            <tr data-href="/sessions/{{$session->id}}">
-                                
+
+                            <tr data-href="{{route('sessions.show',$session->id)}}">
+
                                 <td>{{ \Carbon\Carbon::parse($session->start_time)->format('d.m.Y H:i') }}</td>
                                 <td>{{ $session->stop_time != null ? \Carbon\Carbon::parse($session->stop_time)->format('d.m. H:i') : 'Open!' }}
                                 <td>
                                     <div class="btn-group">
-                                        <a href="/sessions/{{ $session->id }}/edit" class="btn btn-sm btn-success">Edit</a>
+                                        <a href="{{route('sessions.edit',$session->id)}}" class="btn btn-sm btn-success">Edit</a>
                                         <form action="{{ action('TimetableController@destroy', $session->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -41,9 +41,9 @@
                                         </form>
                                     </div>
                                 </td>
-                                
+
                             </tr>
-                            
+
                         @endforeach
 
                     </table>

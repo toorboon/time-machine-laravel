@@ -9,6 +9,16 @@ use Carbon\Carbon;
 class TimetableController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Set the startDate which is handed in from the request to start the actual session.
      *
      * @return \Illuminate\Http\Response

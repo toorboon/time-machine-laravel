@@ -1,6 +1,6 @@
 <nav class="w-100 navbar navbar-expand-md bg-dark navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="{{ route('pages.timeMachine') }}">
+    <a class="navbar-brand" href="">
         {{ config('app.name', 'Laravel') }}
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -9,13 +9,19 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
+      
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a class="nav-link" href="{{ route('pages.export') }}">Export</a></li>
-        {{-- <li class="nav-item"><a class="nav-link" href="#">Reset</a></li>  --}}
-        {{-- <li class="nav-item"><a class="nav-link" href="#">Change Employer</a></li> --}}
-        <li class="nav-item">
-        <!-- This will be a list where you can save the items you want to buy in grocery stores. Also think about making it cross user available. -->
-        <a class="nav-link" href="{{ route('pages.grocery') }}">Grocery-list</a></li> 
+        @auth
+          <li class="nav-item"><a class="nav-link" href="{{ route('pages.timeMachine') }}">Time Machine</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('pages.tictactoe') }}">TicTacToe</a></li>
+          <li class="nav-item">
+          <!-- This will be a list where you can save the items you want to buy in grocery stores. Also think about making it cross user available. -->
+          <a class="nav-link" href="{{ route('pages.grocery') }}">Grocery-list</a></li> 
+          <li class="nav-item"><a class="nav-link" href="{{ route('pages.export') }}">Export</a></li>
+           
+          {{-- <li class="nav-item"><a class="nav-link" href="#">Change Employer</a></li> --}}
+          
+        @endauth
       </ul>
 
       <!-- Right Side Of Navbar -->

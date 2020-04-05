@@ -15,6 +15,8 @@ Route::get('/', 'PagesController@index');
 
 Route::get('/export', 'PagesController@export')->name('pages.export');
 
+Route::get('/tictactoe', 'PagesController@tictactoe')->name('pages.tictactoe');
+
 Route::get('/grocery', 'PagesController@grocery')->name('pages.grocery');
 
 Route::get('/overview', 'PagesController@overview')->name('pages.overview');
@@ -29,7 +31,7 @@ Route::post('/timeMachine/ajaxPause', 'TimetableController@setPauseDate')->name(
 
 Route::post('/timeMachine/ajaxSessionCheck', 'TimetableController@checkSession')->name('check.session');
 
-Route::resource('sessions', 'TimetableController');
+Route::resource('/sessions', 'TimetableController');
 
 Auth::routes();
 
